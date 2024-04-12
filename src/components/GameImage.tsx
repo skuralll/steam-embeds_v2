@@ -5,7 +5,7 @@ type Props = {
 const GameImage = ({ src }: Props) => {
   return (
     <div className="flex justify-center">
-      <img src={src} alt="Banner" className="" />
+      <img src={src} alt="Banner" className="w-[120px] h-[45.2px]" />
     </div>
   );
 };
