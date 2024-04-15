@@ -8,9 +8,13 @@ type Props = {
 
 const GameInfo = ({ title, lastPlay, playTime }: Props) => {
   return (
-    <div className="flex flex-col justify-between w-full h-full text-[12px] text-[#cad5df]">
-      <span>{title}</span>
-      <br></br>
+    <div className="flex flex-col justify-between w-full h-full text-[12px] text-[#cad5df] leading-[14px]">
+      <div>
+        <span>{title}</span>
+      </div>
+      <div>
+        <br></br>
+      </div>
       <div className="flex justify-between items-center">
         <span className="text-[11px] text-[#536b89]">
           {lastPlay == 0 ? '' : getDateString(lastPlay)}
