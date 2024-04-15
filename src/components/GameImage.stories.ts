@@ -7,6 +7,9 @@ const meta = {
 
   parameters: {
     layout: 'centered',
+    backgrounds: {
+      default: 'steam',
+    },
   },
   tags: ['autodocs'],
   argTypes: {
