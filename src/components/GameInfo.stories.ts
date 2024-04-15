@@ -25,7 +25,7 @@ const meta = {
   },
   args: {
     title: 'STEINS;GATE',
-    lastPlay: '3 March, 2021',
+    lastPlay: 1610000000,
     playTime: 30,
   },
 } satisfies Meta<typeof GameInfo>;

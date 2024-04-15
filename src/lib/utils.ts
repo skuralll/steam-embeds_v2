@@ -12,6 +12,8 @@ const months = [
   'November',
   'December',
 ];
+
+// get date string from unixtime
 export function getDateString(unixtime: number) {
   const date = new Date(unixtime * 1000);
   const month_name = months[date.getMonth()];
