@@ -1,4 +1,4 @@
-import { PlayedGameData } from '../types/Game';
+import { PlayedGameData } from '../../types/Game';
 import GameImage from './GameImage';
 import GameInfo from './GameInfo';
 

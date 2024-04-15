@@ -1,5 +1,5 @@
 import { PlayedGameData } from '../types/Game';
-import GameCard from './GameCard';
+import GameCard from './card/GameCard';
 
 type Props = {
   games: PlayedGameData[];

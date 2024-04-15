@@ -1,4 +1,4 @@
-import { getDateString } from '../lib/utils';
+import { getDateString } from '../../lib/utils';
 
 type Props = {
   title: string;
