@@ -3,7 +3,7 @@ import GameCard from './GameCard';
 import { dummyGame } from '../../test/dummy';
 
 const meta = {
-  title: 'Card/GameCard',
+  title: 'Widget/GameCardList/GameCard',
   component: GameCard,
   parameters: {
     layout: 'centered',

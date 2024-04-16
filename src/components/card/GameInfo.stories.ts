@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import GameInfo from './GameInfo';
 
 const meta = {
-  title: 'Card/GameInfo',
+  title: 'Widget/GameCardList/GameInfo',
   component: GameInfo,
 
   parameters: {

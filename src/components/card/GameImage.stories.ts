@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import GameImage from './GameImage';
 
 const meta = {
-  title: 'Card/GameImage',
+  title: 'Widget/GameCardList/GameImage',
   component: GameImage,
 
   parameters: {
