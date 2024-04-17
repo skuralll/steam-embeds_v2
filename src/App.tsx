@@ -1,8 +1,15 @@
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import WidgetPage from './pages/WidgetPage';
+
 function App() {
   return (
-    <>
-      <p className="text-blue-600 font-bold text-5xl ">Hello Tailwind</p>
-    </>
+    <div>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/widget" element={<WidgetPage />} />
+      </Routes>
+    </div>
   );
 }
 
