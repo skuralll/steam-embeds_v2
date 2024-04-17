@@ -7,5 +7,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     `https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${process.env.STEAM_TOKEN}&steamids=${steamid}`
   );
   const data: string = await steamResponse.json();
-  res.setHeader('Content-Type', 'application/json; charset=utf-8').send(data);
+  res
+    .setHeader('Content-Type', 'application/json; charset=utf-8')
+    .setHeader('Cache-Control', 's-maxage=86400 immutable')
+    .send(data);
 }
