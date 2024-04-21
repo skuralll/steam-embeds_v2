@@ -23,10 +23,26 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Normal: Story = {
   args: {
     title: 'Most Played Games',
     player: dummyPlayer,
     games: dummyGames.slice(0, 8),
+  },
+};
+
+export const Long: Story = {
+  args: {
+    title: 'Most Played Games',
+    player: dummyPlayer,
+    games: dummyGames.slice(0, 16),
+  },
+};
+
+export const Short: Story = {
+  args: {
+    title: 'Most Played Games',
+    player: dummyPlayer,
+    games: dummyGames.slice(0, 1),
   },
 };

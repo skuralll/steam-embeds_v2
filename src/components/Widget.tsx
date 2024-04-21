@@ -11,7 +11,7 @@ type Props = {
 
 const Widget = ({ title, player, games }: Props) => {
   return (
-    <div className="w-screen rounded-[0.25rem] overflow-hidden">
+    <div className="w-screen h-screen rounded-[0.25rem] overflow-hidden">
       <WidgetHeader title={title} player={player} />
       <GameCardList games={games} />
     </div>
