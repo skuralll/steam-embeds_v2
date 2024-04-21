@@ -3,12 +3,20 @@ import logo from '../assets/steamlogo.svg';
 
 type Props = {
   title: string;
-  player: PlayerSummary;
+  player?: PlayerSummary;
 };
 
 const GameCardList = ({ title, player }: Props) => {
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (!player) event.preventDefault();
+  };
+
   return (
-    <a href={`https://steamcommunity.com/profiles/${player.steamid}/`} target="_blank">
+    <a
+      href={`https://steamcommunity.com/profiles/${player.steamid}/`}
+      target="_blank"
+      onClick={handleClick}
+    >
       <div className="w-full flex items-center gap-[1rem] bg-[#2d333f] p-[0.5rem]">
         <div>
           <img src={logo} width={100} height={30} alt="logo" />
