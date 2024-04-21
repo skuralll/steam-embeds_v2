@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Widget from './Widget';
-import { dummyGame, dummyPlayer } from '../test/dummy';
+import { dummyGames, dummyPlayer } from '../test/dummy';
 
 const meta = {
   title: 'Widget',
@@ -14,9 +14,9 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {},
   args: {
-    title: 'Most Played Games',
+    title: 'This is Title',
     player: dummyPlayer,
-    games: Array(8).fill(dummyGame),
+    games: dummyGames.slice(0, 8),
   },
 } satisfies Meta<typeof Widget>;
 
@@ -27,6 +27,6 @@ export const Primary: Story = {
   args: {
     title: 'Most Played Games',
     player: dummyPlayer,
-    games: Array(8).fill(dummyGame),
+    games: dummyGames.slice(0, 8),
   },
 };

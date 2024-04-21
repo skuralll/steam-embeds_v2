@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import GameCard from './GameCard';
-import { dummyGame } from '../../test/dummy';
+import { dummyGames } from '../../test/dummy';
 
 const meta = {
   title: 'Widget/GameCardList/GameCard',
@@ -14,7 +14,7 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {},
   args: {
-    game: dummyGame,
+    game: dummyGames[0],
   },
 } satisfies Meta<typeof GameCard>;
 
@@ -23,6 +23,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    game: dummyGame,
+    game: dummyGames[0],
   },
 };
