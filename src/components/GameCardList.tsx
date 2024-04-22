@@ -7,10 +7,10 @@ type Props = {
 
 const GameCardList = ({ games }: Props) => {
   return (
-    <div className="w-full bg-[#16202d]">
+    <div className="w-full h-full bg-[#16202d]">
       <ol className="list-none">
         {games.map((game) => (
-          <li className="border-t-[2px] border-[#1b2838]">
+          <li key={game.appid} className="border-t-[2px] border-[#1b2838]">
             <GameCard game={game} />
           </li>
         ))}
