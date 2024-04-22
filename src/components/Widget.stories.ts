@@ -39,10 +39,10 @@ export const Long: Story = {
   },
 };
 
-export const Short: Story = {
+export const Loading: Story = {
   args: {
     title: 'Most Played Games',
     player: dummyPlayer,
-    games: dummyGames.slice(0, 1),
+    games: undefined,
   },
 };
