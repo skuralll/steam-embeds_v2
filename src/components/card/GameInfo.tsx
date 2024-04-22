@@ -6,11 +6,18 @@ type Props = {
   playTime: number;
 };
 
+const TITLE_LENGTH_LIMIT = 32;
+
 const GameInfo = ({ title, lastPlay, playTime }: Props) => {
+  // limit title length
+  if (title.length > TITLE_LENGTH_LIMIT) {
+    title = title.slice(0, TITLE_LENGTH_LIMIT) + '...';
+  }
+
   return (
     <div className="flex flex-col justify-between w-full h-full text-[12px] text-[#cad5df] leading-[14px]">
       <div>
-        <span>{title}</span>
+        <span className="whitespace-nowrap">{title}</span>
       </div>
       <div>
         <br></br>
