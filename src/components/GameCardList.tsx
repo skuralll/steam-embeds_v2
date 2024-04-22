@@ -7,7 +7,7 @@ type Props = {
 
 const GameCardList = ({ games }: Props) => {
   return (
-    <div className="w-full h-full bg-[#16202d]">
+    <div className="w-full h-full bg-[#16202d] overflow-y-scroll">
       <ol className="list-none">
         {games.map((game) => (
           <li key={game.appid} className="border-t-[2px] border-[#1b2838]">
