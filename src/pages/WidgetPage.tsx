@@ -31,14 +31,9 @@ const WidgetPage = () => {
   }
   const num = Number(query.get('num') ?? DEFAULT_NUM);
   // Render
-  if (player && games) {
-    // success to get data
-    return <Widget title={'Most Played Games'} player={player} games={games} />;
-  } else {
-    // failed to get data
-    // TODO show loading screen
-    return <div>This is null</div>;
-  }
+  return (
+    <Widget title={'Most Played Games'} player={player ?? undefined} games={games ?? undefined} />
+  );
 };
 
 export default WidgetPage;

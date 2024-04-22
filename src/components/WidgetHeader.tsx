@@ -11,9 +11,11 @@ const GameCardList = ({ title, player }: Props) => {
     if (!player) event.preventDefault();
   };
 
+  const steamid = player ? player.steamid : '';
+
   return (
     <a
-      href={`https://steamcommunity.com/profiles/${player.steamid}/`}
+      href={`https://steamcommunity.com/profiles/${steamid}/`}
       target="_blank"
       onClick={handleClick}
     >
