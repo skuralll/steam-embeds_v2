@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import GameCard from './GameCard';
-import { dummyGames } from '../../test/dummy';
+import { dummyGames } from '../../../test/dummy';
 
 const meta = {
   title: 'Widget/GameCardList/GameCard',

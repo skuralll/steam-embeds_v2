@@ -1,5 +1,5 @@
-import { PlayerSummary } from '../types/Player';
-import logo from '../assets/steamlogo.svg';
+import { PlayerSummary } from '../../types/Player';
+import logo from '../../assets/steamlogo.svg';
 
 type Props = {
   title: string;

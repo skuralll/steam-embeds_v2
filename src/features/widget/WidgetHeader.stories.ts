@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import GameCardList from './GameCardList';
-import { dummyGames } from '../test/dummy';
+import WidgetHeader from './WidgetHeader';
+import { dummyPlayer } from '../../test/dummy';
 
 const meta = {
-  title: 'Widget/GameCardList',
-  component: GameCardList,
+  title: 'Widget/WidgetHeader',
+  component: WidgetHeader,
   parameters: {
     layout: 'centered',
     backgrounds: {
@@ -14,15 +14,17 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {},
   args: {
-    games: dummyGames.slice(0, 8),
+    title: 'Most Played Games',
+    player: dummyPlayer,
   },
-} satisfies Meta<typeof GameCardList>;
+} satisfies Meta<typeof WidgetHeader>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    games: dummyGames.slice(0, 8),
+    title: 'Most Played Games',
+    player: dummyPlayer,
   },
 };

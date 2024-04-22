@@ -1,8 +1,8 @@
-import { PlayerSummary } from '../types/Player';
-import { PlayedGameData } from '../types/Game';
+import { PlayerSummary } from '../../types/Player';
+import { PlayedGameData } from '../../types/Game';
 import WidgetHeader from './WidgetHeader';
 import GameCardList from './GameCardList';
-import LoadingSpinner from './LoadingSpinner';
+import LoadingSpinner from '../../components/LoadingSpinner';
 
 type Props = {
   title: string;

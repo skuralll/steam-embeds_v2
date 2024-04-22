@@ -1,4 +1,4 @@
-import { PlayedGameData } from '../types/Game';
+import { PlayedGameData } from '../../types/Game';
 import GameCard from './card/GameCard';
 
 type Props = {
