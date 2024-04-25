@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import LoadingSpinner from './LoadingSpinner';
+import AppLogo from './AppLogo';
 
 const meta = {
-  title: 'Common/LoadingSpinner',
-  component: LoadingSpinner,
+  title: 'Common/AppLogo',
+  component: AppLogo,
   parameters: {
     layout: 'centered',
     backgrounds: {
@@ -13,11 +13,11 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {},
   args: {},
-} satisfies Meta<typeof LoadingSpinner>;
+} satisfies Meta<typeof AppLogo>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {
+export const Primary: Story = {
   args: {},
 };
