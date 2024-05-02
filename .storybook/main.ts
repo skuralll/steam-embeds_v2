@@ -24,7 +24,7 @@ const config: StorybookConfig = {
       plugins: [
         autoStoryGenerator.vite({
           preset: 'react',
-          imports: ['src/components/**/*.tsx'],
+          imports: ['src/components/**/*.tsx', 'src/features/**/*.tsx'],
         }),
       ],
     }),
