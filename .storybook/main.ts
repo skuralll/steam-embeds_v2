@@ -1,4 +1,6 @@
 import type { StorybookConfig } from '@storybook/react-vite';
+import autoStoryGenerator from '@takuma-ru/auto-story-generator';
+import { mergeConfig } from 'vite';
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -17,5 +19,14 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
   },
+  viteFinal: (config) =>
+    mergeConfig(config, {
+      plugins: [
+        autoStoryGenerator.vite({
+          preset: 'react',
+          imports: ['src/components/**/*.tsx'],
+        }),
+      ],
+    }),
 };
 export default config;
