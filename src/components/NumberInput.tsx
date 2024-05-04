@@ -44,7 +44,7 @@ const NumberInput = ({ label, placeholder, value, setValue }: Props) => {
         <input
           type="text"
           aria-describedby="helper-text-explanation"
-          className="bg-gray-50 border border-x-0 border-gray-300 h-full text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5"
+          className="bg-gray-50 border border-x-0 border-gray-300 h-full text-center text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent block w-full py-2.5 z-10"
           placeholder={placeholder}
           value={value}
           onChange={(e) => setNumber(parseInt(e.target.value))}
