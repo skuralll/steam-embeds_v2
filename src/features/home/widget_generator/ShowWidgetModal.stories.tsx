@@ -34,7 +34,7 @@ export const Primary: Story = {
   args: {
     isOpen: true,
     params: {
-      steamid: "76561198424303465",
+      steamId: "76561198424303465",
       num: 8,
       width: 400,
       height: 500,

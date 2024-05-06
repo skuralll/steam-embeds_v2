@@ -1,5 +1,5 @@
 export type WidgetParams = {
-  steamid: string;
+  steamId: string;
   num: number;
   width: number;
   height: number;
