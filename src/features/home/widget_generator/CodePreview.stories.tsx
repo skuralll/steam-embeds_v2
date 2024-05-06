@@ -1,18 +1,18 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import CodePreview from './CodePreview';
+import CodePreview from "./CodePreview";
 
 const meta: Meta<typeof CodePreview> = {
-  title: 'Home/WidgetGenerator/CodePreview',
+  title: "Home/WidgetGenerator/CodePreview",
   component: CodePreview,
   parameters: {
     backgrounds: {
-      default: 'steam',
+      default: "steam",
     },
   },
-  tags: ['autodocs'],
-  args: { code: '<div>Code Preview</div>' },
-  argTypes: { code: { control: 'text' } },
+  tags: ["autodocs"],
+  args: { code: undefined },
+  argTypes: { code: { control: "text" } },
 };
 
 export default meta;

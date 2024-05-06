@@ -1,27 +1,27 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import Modal from './Modal';
-import { ComponentProps, useState } from 'react';
+import Modal from "./Modal";
+import { ComponentProps, useState } from "react";
 
 const meta: Meta<typeof Modal> = {
-  title: 'Common/Modal',
+  title: "Common/Modal",
   component: Modal,
-  tags: ['autodocs'],
-  args: { children: 'string', isOpen: true, setIsOpen: undefined },
+  tags: ["autodocs"],
+  args: { children: "string", isOpen: true, setIsOpen: undefined },
   argTypes: {
     children: {
-      control: 'select',
+      control: "select",
       options: [
-        'string',
-        'number',
-        'false',
-        'true',
-        'React.ReactElement<any, string | React.JSXElementConstructor<any>>',
-        'Iterable<React.ReactNode>',
-        'React.ReactPortal',
+        "string",
+        "number",
+        "false",
+        "true",
+        "React.ReactElement<any, string | React.JSXElementConstructor<any>>",
+        "Iterable<React.ReactNode>",
+        "React.ReactPortal",
       ],
     },
-    isOpen: { control: 'boolean' },
+    isOpen: { control: "boolean" },
   },
 };
 
@@ -36,7 +36,10 @@ const WithHooks = (args: ComponentProps<typeof Modal>) => {
       <Modal {...args} isOpen={isOpen} setIsOpen={setIsOpen}>
         <h1 className="text-[22px]">タイトル</h1>
       </Modal>
-      <button onClick={() => setIsOpen(true)} className="bg-blue-500 p-2 rounded-lg">
+      <button
+        onClick={() => setIsOpen(true)}
+        className="bg-blue-500 p-2 rounded-lg"
+      >
         Open Modal
       </button>
     </>
