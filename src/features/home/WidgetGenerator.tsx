@@ -5,6 +5,9 @@ import InputField from '../../components/InputField';
 import NumberInput from '../../components/NumberInput';
 import Button from '../../components/Button';
 import ShowWidgetModal from './widget_generator/ShowWidgetModal';
+import { useForm } from 'react-hook-form';
+
+type Form = {};
 
 const WidgetGenerator = () => {
   const [steamId, setSteamId] = useState('');
@@ -14,7 +17,13 @@ const WidgetGenerator = () => {
 
   const [modalOpen, setModalOpen] = useState(false);
 
-  const onClickGenerate = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Form>();
+
+  const onSubmitGenerate = () => {
     setModalOpen(true);
   };
 
@@ -22,27 +31,34 @@ const WidgetGenerator = () => {
     <div>
       <BoxHeader title={'埋め込みコード生成'} />
       <BoxContents>
-        <div className="w-full flex flex-col gap-2">
-          <InputField
-            label="SteamID"
-            placeholder="76561198424303465"
-            value={steamId}
-            setValue={setSteamId}
-          />
-          <div className="flex gap-2">
-            <div className="grow">
-              <InputField label="横幅 (px)" placeholder="350" value={width} setValue={setWidth} />
+        <form onSubmit={handleSubmit(onSubmitGenerate)}>
+          <div className="w-full flex flex-col gap-2">
+            <InputField
+              label="SteamID"
+              placeholder="76561198424303465"
+              value={steamId}
+              setValue={setSteamId}
+            />
+            <div className="flex gap-2">
+              <div className="grow">
+                <InputField label="横幅 (px)" placeholder="350" value={width} setValue={setWidth} />
+              </div>
+              <div className="grow">
+                <InputField
+                  label="縦幅 (px)"
+                  placeholder="500"
+                  value={height}
+                  setValue={setHeight}
+                />
+              </div>
             </div>
-            <div className="grow">
-              <InputField label="縦幅 (px)" placeholder="500" value={height} setValue={setHeight} />
+            <div className="flex justify-start">
+              <NumberInput label="表示するゲーム数" placeholder="8" value={num} setValue={setNum} />
+              <div className="grow" />
             </div>
+            <Button>コード生成</Button>
           </div>
-          <div className="flex justify-start">
-            <NumberInput label="表示するゲーム数" placeholder="8" value={num} setValue={setNum} />
-            <div className="grow" />
-          </div>
-          <Button onClick={onClickGenerate}>コード生成</Button>
-        </div>
+        </form>
       </BoxContents>
       <ShowWidgetModal
         isOpen={modalOpen}
