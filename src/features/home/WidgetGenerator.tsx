@@ -23,7 +23,7 @@ const WidgetGenerator = () => {
     formState: { errors },
   } = useForm<Form>();
 
-  const onSubmitGenerate = () => {
+  const onSubmitGenerate = (data: Form) => {
     setModalOpen(true);
   };
 
