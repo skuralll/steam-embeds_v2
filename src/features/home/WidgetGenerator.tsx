@@ -5,15 +5,22 @@ import InputField from '../../components/InputField';
 import NumberInput from '../../components/NumberInput';
 import Button from '../../components/Button';
 import ShowWidgetModal from './widget_generator/ShowWidgetModal';
-import { useForm } from 'react-hook-form';
+import { FieldErrors, set, useForm } from 'react-hook-form';
 
-type Form = {};
+type Form = {
+  steamId: string;
+  width: string;
+  height: string;
+  // num: number;
+};
 
 const WidgetGenerator = () => {
-  const [steamId, setSteamId] = useState('');
-  const [width, setWidth] = useState('');
-  const [height, setHeight] = useState('');
   const [num, setNum] = useState(8);
+  const [params, setParams] = useState<Form>({
+    steamId: '',
+    width: '',
+    height: '',
+  });
 
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -23,32 +30,40 @@ const WidgetGenerator = () => {
     formState: { errors },
   } = useForm<Form>();
 
-  const onSubmitGenerate = (data: Form) => {
+  const onSubmitValid = (data: Form) => {
+    setParams(data);
     setModalOpen(true);
+  };
+
+  const onSubmitInvalid = (data: FieldErrors<Form>) => {
+    // todo エラー表示
   };
 
   return (
     <div>
       <BoxHeader title={'埋め込みコード生成'} />
       <BoxContents>
-        <form onSubmit={handleSubmit(onSubmitGenerate)}>
+        <form onSubmit={handleSubmit(onSubmitValid, onSubmitInvalid)}>
           <div className="w-full flex flex-col gap-2">
             <InputField
               label="SteamID"
               placeholder="76561198424303465"
-              value={steamId}
-              setValue={setSteamId}
+              type="text"
+              validation={register('steamId', { required: 'SteamIDを入力してください' })}
             />
             <div className="flex gap-2">
               <div className="grow">
-                <InputField label="横幅 (px)" placeholder="350" value={width} setValue={setWidth} />
+                <InputField
+                  label="横幅 (px)"
+                  placeholder="350"
+                  validation={register('width', { required: '横幅を入力して下さい' })}
+                />
               </div>
               <div className="grow">
                 <InputField
                   label="縦幅 (px)"
                   placeholder="500"
-                  value={height}
-                  setValue={setHeight}
+                  validation={register('height', { required: '縦幅を入力して下さい' })}
                 />
               </div>
             </div>
@@ -56,7 +71,7 @@ const WidgetGenerator = () => {
               <NumberInput label="表示するゲーム数" placeholder="8" value={num} setValue={setNum} />
               <div className="grow" />
             </div>
-            <Button>コード生成</Button>
+            <Button type="submit">コード生成</Button>
           </div>
         </form>
       </BoxContents>
@@ -64,9 +79,9 @@ const WidgetGenerator = () => {
         isOpen={modalOpen}
         setIsOpen={setModalOpen}
         params={{
-          steamId,
-          width: parseInt(width),
-          height: parseInt(height),
+          steamId: params.steamId,
+          width: parseInt(params.width),
+          height: parseInt(params.height),
           num,
         }}
       />
