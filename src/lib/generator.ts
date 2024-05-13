@@ -1,7 +1,6 @@
 import { WidgetParams } from '@/types/Widget';
 
 export const getEmbedsCode = (params: WidgetParams) => {
-  console.log(typeof params.width);
   if (
     params == undefined ||
     params.steamId == undefined ||

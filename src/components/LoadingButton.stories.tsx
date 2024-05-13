@@ -1,13 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import Button from "./Button";
+import LoadingButton from "./LoadingButton";
 
-const meta: Meta<typeof Button> = {
-  title: "Common/Button",
-  component: Button,
+const meta: Meta<typeof LoadingButton> = {
+  title: "Common/LoadingButton",
+  component: LoadingButton,
   tags: ["autodocs"],
-  args: { children: "string", ref: undefined, key: undefined },
+  args: { isLoading: true, children: "string", ref: undefined, key: undefined },
   argTypes: {
+    isLoading: { control: "boolean" },
     children: {
       control: "select",
       options: [
@@ -31,6 +32,16 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
-  args: { children: "Button", onClick: () => console.log("Button clicked") },
+export const NotLoading: Story = {
+  args: {
+    isLoading: false,
+    children: "This is not loading",
+  },
+};
+
+export const Loading: Story = {
+  args: {
+    isLoading: true,
+    children: "This is loading",
+  },
 };
