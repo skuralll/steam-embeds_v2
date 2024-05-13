@@ -2,7 +2,7 @@ import { PlayerSummary } from '../../types/Player';
 import { PlayedGameData } from '../../types/Game';
 import WidgetHeader from './WidgetHeader';
 import GameCardList from './GameCardList';
-import LoadingSpinner from '../../components/LoadingSpinner';
+import SteamSpinner from '../../components/SteamSpinner';
 
 type Props = {
   title: string;
@@ -16,7 +16,7 @@ const Widget = ({ title, player, games }: Props) => {
       <WidgetHeader title={title} player={player} />
       {
         /* if games is undefined, show LoadingSpinner */
-        games ? <GameCardList games={games} /> : <LoadingSpinner />
+        games ? <GameCardList games={games} /> : <SteamSpinner />
       }
     </div>
   );

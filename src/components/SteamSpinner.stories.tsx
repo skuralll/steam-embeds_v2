@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import LoadingSpinner from './LoadingSpinner';
+import SteamSpinner from './SteamSpinner';
 
 const meta = {
-  title: 'Common/LoadingSpinner',
-  component: LoadingSpinner,
+  title: 'Common/SteamSpinner',
+  component: SteamSpinner,
   parameters: {
     layout: 'centered',
     backgrounds: {
@@ -13,7 +13,7 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {},
   args: {},
-} satisfies Meta<typeof LoadingSpinner>;
+} satisfies Meta<typeof SteamSpinner>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
