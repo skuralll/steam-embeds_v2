@@ -11,7 +11,6 @@ type Form = {
   steamId: string;
   width: string;
   height: string;
-  // num: number;
 };
 
 const WidgetGenerator = () => {
@@ -49,6 +48,7 @@ const WidgetGenerator = () => {
               label="SteamID"
               placeholder="76561198424303465"
               type="text"
+              error={errors.steamId?.message}
               validation={register('steamId', { required: 'SteamIDを入力してください' })}
             />
             <div className="flex gap-2">
@@ -56,6 +56,7 @@ const WidgetGenerator = () => {
                 <InputField
                   label="横幅 (px)"
                   placeholder="350"
+                  error={errors.width?.message}
                   validation={register('width', { required: '横幅を入力して下さい' })}
                 />
               </div>
@@ -63,6 +64,7 @@ const WidgetGenerator = () => {
                 <InputField
                   label="縦幅 (px)"
                   placeholder="500"
+                  error={errors.height?.message}
                   validation={register('height', { required: '縦幅を入力して下さい' })}
                 />
               </div>
