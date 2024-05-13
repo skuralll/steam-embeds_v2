@@ -1,3 +1,4 @@
+import WidgetExample from '@/features/home/WidgetExample';
 import WhatIsThis from '../features/home/ WhatIsThis';
 import HomeHeader from '../features/home/HomeHeader';
 import WidgetGenerator from '../features/home/WidgetGenerator';
@@ -10,6 +11,7 @@ const HomePage = () => {
         <div className="max-w-3xl bg-[rgb(26,35,48)] px-3 py-2 w-full flex flex-col gap-[15px]">
           <WhatIsThis />
           <WidgetGenerator />
+          <WidgetExample />
         </div>
       </div>
     </div>
