@@ -3,9 +3,10 @@ import BoxContents from '../../components/BoxContents';
 import BoxHeader from '../../components/BoxHeader';
 import InputField from '../../components/InputField';
 import NumberInput from '../../components/NumberInput';
-import Button from '../../components/Button';
 import ShowWidgetModal from './widget_generator/ShowWidgetModal';
-import { FieldErrors, set, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
+import { existsPlayer } from '@/lib/steam';
+import LoadingButton from '@/components/LoadingButton';
 
 type Form = {
   steamId: string;
@@ -20,21 +21,31 @@ const WidgetGenerator = () => {
     width: '',
     height: '',
   });
+  const [loading, setLoading] = useState(false);
 
   const [modalOpen, setModalOpen] = useState(false);
 
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    setError,
+    formState: { isDirty, errors },
   } = useForm<Form>();
 
-  const onSubmitValid = (data: Form) => {
-    setParams(data);
-    setModalOpen(true);
+  const onSubmitValid = async (data: Form) => {
+    setLoading(true);
+    if (await existsPlayer(data.steamId)) {
+      // ユーザーが存在する
+      setParams(data);
+      setModalOpen(true);
+    } else {
+      // ユーザーが存在しない
+      setError('steamId', { type: 'manual', message: 'ユーザーが存在しません' });
+    }
+    setLoading(false);
   };
 
-  const onSubmitInvalid = (data: FieldErrors<Form>) => {
+  const onSubmitInvalid = () => {
     // todo エラー表示
   };
 
@@ -73,7 +84,9 @@ const WidgetGenerator = () => {
               <NumberInput label="表示するゲーム数" placeholder="8" value={num} setValue={setNum} />
               <div className="grow" />
             </div>
-            <Button type="submit">コード生成</Button>
+            <LoadingButton disabled={!isDirty} type="submit" isLoading={loading}>
+              {loading ? '生成中' : 'コード生成'}
+            </LoadingButton>
           </div>
         </form>
       </BoxContents>
