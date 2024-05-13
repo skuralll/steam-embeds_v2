@@ -1,16 +1,16 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import MinusIcon from './MinusIcon';
+import MinusIcon from "./MinusIcon";
 
 const meta: Meta<typeof MinusIcon> = {
-  title: 'Common/NumberInput/MinusIcon',
+  title: "Common/NumberInput/MinusIcon",
   component: MinusIcon,
   parameters: {
     backgrounds: {
-      default: 'steam',
+      default: "steam",
     },
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   args: {},
   argTypes: {},
 };

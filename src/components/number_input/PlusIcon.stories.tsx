@@ -1,16 +1,16 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import PlusIcon from './PlusIcon';
+import PlusIcon from "./PlusIcon";
 
 const meta: Meta<typeof PlusIcon> = {
-  title: 'Common/NumberInput/PlusIcon',
+  title: "Common/NumberInput/PlusIcon",
   component: PlusIcon,
   parameters: {
     backgrounds: {
-      default: 'steam',
+      default: "steam",
     },
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   args: {},
   argTypes: {},
 };
