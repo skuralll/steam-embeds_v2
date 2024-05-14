@@ -30,7 +30,13 @@ const WidgetGenerator = () => {
     handleSubmit,
     setError,
     formState: { isDirty, errors },
-  } = useForm<Form>();
+  } = useForm<Form>({
+    defaultValues: {
+      steamId: '',
+      width: '350',
+      height: '470',
+    },
+  });
 
   const onSubmitValid = async (data: Form) => {
     setLoading(true);
