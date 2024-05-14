@@ -32,7 +32,6 @@ const WidgetGenerator = () => {
     formState: { isDirty, errors },
   } = useForm<Form>({
     defaultValues: {
-      steamId: '',
       width: '350',
       height: '470',
     },
