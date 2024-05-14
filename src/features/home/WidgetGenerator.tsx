@@ -56,8 +56,8 @@ const WidgetGenerator = () => {
 
   return (
     <div>
-      <BoxHeader title={'埋め込みコード生成'} />
-      <BoxContents>
+      <BoxHeader title={'埋め込みコード生成'} isRounded />
+      <BoxContents isRounded>
         <form onSubmit={handleSubmit(onSubmitValid, onSubmitInvalid)}>
           <div className="w-full flex flex-col gap-2">
             <InputField

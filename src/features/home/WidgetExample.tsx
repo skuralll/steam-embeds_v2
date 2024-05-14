@@ -4,8 +4,8 @@ import BoxHeader from '../../components/BoxHeader';
 const WidgetExample = () => {
   return (
     <div>
-      <BoxHeader title={'使用例'} />
-      <BoxContents>
+      <BoxHeader title={'使用例'} isRounded />
+      <BoxContents isRounded>
         <div>
           <span>生成されたコードを使用すると、以下のようにゲーム一覧を表示できます。</span>
         </div>
