@@ -2,6 +2,7 @@ import WidgetExample from '@/features/home/WidgetExample';
 import WhatIsThis from '../features/home/ WhatIsThis';
 import HomeHeader from '../features/home/HomeHeader';
 import WidgetGenerator from '../features/home/WidgetGenerator';
+import HomeFooter from '@/features/home/HomeFooter';
 
 const HomePage = () => {
   return (
@@ -14,6 +15,7 @@ const HomePage = () => {
           <WidgetExample />
         </div>
       </div>
+      <HomeFooter />
     </div>
   );
 };
