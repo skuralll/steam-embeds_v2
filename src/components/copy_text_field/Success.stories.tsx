@@ -1,11 +1,11 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Success } from "./Success";
+import Success from './Success';
 
 const meta: Meta<typeof Success> = {
-  title: "components/Success",
+  title: 'components/Success',
   component: Success,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   args: {},
   argTypes: {},
 };

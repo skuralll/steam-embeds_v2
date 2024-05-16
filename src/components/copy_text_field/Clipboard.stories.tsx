@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Clipboard } from "./Clipboard";
+import Clipboard from "./Clipboard";
 
 const meta: Meta<typeof Clipboard> = {
   title: "components/Clipboard",
