@@ -1,16 +1,16 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react';
 
-import InputField from "./InputField";
+import InputField from './InputField';
 
 const meta: Meta<typeof InputField> = {
-  title: "Common/InputField",
+  title: 'Common/InputField',
   component: InputField,
   parameters: {
     backgrounds: {
-      default: "steam",
+      default: 'steam',
     },
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   args: {
     label: undefined,
     error: undefined,
@@ -19,13 +19,13 @@ const meta: Meta<typeof InputField> = {
     key: undefined,
   },
   argTypes: {
-    label: { control: "text" },
-    error: { control: "text" },
+    label: { control: 'text' },
+    error: { control: 'text' },
     ref: {
-      control: "select",
-      options: ["string", "(instance: T) => void", "React.RefObject<T>"],
+      control: 'select',
+      options: ['string', '(instance: T) => void', 'React.RefObject<T>'],
     },
-    key: { control: "select", options: ["string", "number", "bigint"] },
+    key: { control: 'select', options: ['string', 'number', 'bigint'] },
   },
 };
 
@@ -34,9 +34,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    label: "Label",
-    placeholder: "PlaceHolder",
-    value: "",
-    setValue: () => {},
+    label: 'Label',
+    placeholder: 'PlaceHolder',
+    value: '',
   },
 };
