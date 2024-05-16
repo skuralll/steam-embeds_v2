@@ -7,7 +7,7 @@ export async function getPlayerSummary(steamid: string): Promise<PlayerSummary |
     const json = await data.json();
     // レスポンス検証
     if (json.response['players'].length === 0) {
-      console.log('❗️Error on fetching player summary. SteamID may be incorrect');
+      // console.log('❗️Error on fetching player summary. SteamID may be incorrect');
       return null;
     }
     // うまく取得できていれば返す
@@ -17,6 +17,11 @@ export async function getPlayerSummary(steamid: string): Promise<PlayerSummary |
     console.error(e);
     return null;
   }
+}
+
+export async function existsPlayer(steamid: string): Promise<boolean> {
+  const player = await getPlayerSummary(steamid);
+  return player !== null;
 }
 
 export async function getOwnedGames(steamid: string): Promise<PlayedGameData[]> {

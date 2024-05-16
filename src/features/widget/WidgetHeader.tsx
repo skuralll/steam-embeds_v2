@@ -1,12 +1,12 @@
-import { PlayerSummary } from '../types/Player';
-import logo from '../assets/steamlogo.svg';
+import { PlayerSummary } from '../../types/Player';
+import logo from '../../assets/steamlogo.svg';
 
 type Props = {
   title: string;
   player?: PlayerSummary;
 };
 
-const GameCardList = ({ title, player }: Props) => {
+const WidgetHeader = ({ title, player }: Props) => {
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     if (!player) event.preventDefault();
   };
@@ -31,4 +31,4 @@ const GameCardList = ({ title, player }: Props) => {
   );
 };
 
-export default GameCardList;
+export default WidgetHeader;

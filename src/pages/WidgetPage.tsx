@@ -3,7 +3,7 @@ import { PlayerSummary } from '../types/Player';
 import { useEffect, useState } from 'react';
 import { getOwnedGames, getPlayerSummary } from '../lib/steam';
 import { PlayedGameData } from '../types/Game';
-import Widget from '../components/Widget';
+import Widget from '../features/widget/Widget';
 
 const DEFAULT_NUM = 8;
 

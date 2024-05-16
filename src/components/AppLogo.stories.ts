@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import GameCard from './GameCard';
-import { dummyGames } from '../../test/dummy';
+import AppLogo from './AppLogo';
 
 const meta = {
-  title: 'Widget/GameCardList/GameCard',
-  component: GameCard,
+  title: 'Common/AppLogo',
+  component: AppLogo,
   parameters: {
     layout: 'centered',
     backgrounds: {
@@ -13,16 +12,12 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {},
-  args: {
-    game: dummyGames[0],
-  },
-} satisfies Meta<typeof GameCard>;
+  args: {},
+} satisfies Meta<typeof AppLogo>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: {
-    game: dummyGames[0],
-  },
+  args: {},
 };
