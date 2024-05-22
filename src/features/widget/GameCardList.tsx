@@ -35,7 +35,10 @@ const GameCardList = ({ games }: Props) => {
   }, []);
 
   return (
-    <div ref={scrollRef} className="static w-full h-full bg-[#16202d] overflow-y-scroll">
+    <div
+      ref={scrollRef}
+      className="static w-full h-full bg-[#16202d] overflow-y-scroll hidden-scrollbar"
+    >
       <ol className="list-none">
         {games.map((game) => (
           <li key={game.appid} className="border-t-[2px] border-[#1b2838]">
