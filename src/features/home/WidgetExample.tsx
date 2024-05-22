@@ -11,7 +11,7 @@ const WidgetExample = () => {
         </div>
         <div className="mt-2">
           <iframe
-            src={`${import.meta.env.VITE_BASE_URL}/widget?id=76561198424303465&num=8`}
+            src={`${import.meta.env.VITE_BASE_URL}/widget?id=76561198424303465&num=10`}
             width="350"
             height="480"
           />
