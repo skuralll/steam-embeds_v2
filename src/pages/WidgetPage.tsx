@@ -13,12 +13,23 @@ const WidgetPage = () => {
   const [games, setGames] = useState<PlayedGameData[] | null>(null);
   useEffect(() => {
     async function fetchData() {
-      setPlayer(await getPlayerSummary(steamid!));
-      setGames(
-        (await getOwnedGames(steamid!))
-          .sort((a, b) => b.playtime_forever - a.playtime_forever)
-          .slice(0, num)
-      );
+      try {
+        const playerPromise = getPlayerSummary(steamid!);
+        const gamesPromise = getOwnedGames(steamid!);
+        playerPromise.then(setPlayer).catch((error) => {
+          console.error('Error fetching player summary:', error);
+        });
+        gamesPromise
+          .then((games) => {
+            setGames(games.sort((a, b) => b.playtime_forever - a.playtime_forever).slice(0, num));
+          })
+          .catch((error) => {
+            console.error('Error fetching owned games:', error);
+          });
+        await Promise.all([playerPromise, gamesPromise]);
+      } catch (e) {
+        console.error('Error fetching data:', e);
+      }
     }
     fetchData();
   }, []);
