@@ -11,18 +11,23 @@ const GameCardList = ({ games }: Props) => {
   // スクロール検知
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [isBottom, setIsBottom] = useState(false);
-  useEffect(() => {
-    const handleScroll = () => {
-      const element = scrollRef.current;
-      if (element) {
-        if (element.scrollHeight - element.scrollTop === element.clientHeight) {
-          setIsBottom(true);
-        } else {
-          setIsBottom(false);
-        }
-      }
-    };
+  const handleScroll = () => {
     const element = scrollRef.current;
+    if (element) {
+      const scrollPos = element.scrollHeight - element.scrollTop;
+      console.log(scrollPos);
+      if (element.scrollHeight - element.scrollTop === element.clientHeight) {
+        setIsBottom(true);
+      } else {
+        setIsBottom(false);
+      }
+    }
+  };
+  useEffect(() => {
+    const element = scrollRef.current;
+    // 矢印表示の初期化
+    handleScroll();
+    // イベント登録
     if (element) {
       element.addEventListener('scroll', handleScroll);
     }
