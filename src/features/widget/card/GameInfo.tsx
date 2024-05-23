@@ -24,7 +24,7 @@ const GameInfo = ({ title, lastPlay, playTime }: Props) => {
       </div>
       <div className="flex justify-between items-center">
         <span className="text-[11px] text-[#536b89]">
-          {lastPlay == 0 ? '' : getDateString(lastPlay)}
+          {!lastPlay ? '' : getDateString(lastPlay)}
         </span>
         <span>{Math.ceil((playTime / 60) * 10) / 10 + ' hours'}</span>
       </div>
