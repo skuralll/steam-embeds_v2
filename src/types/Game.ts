@@ -14,3 +14,8 @@ export type PlayedGameData = {
   playtime_disconnected: number;
   rtime_last_played: number;
 };
+
+export type GameDetails = {
+  developers: string[];
+  publishers: string[];
+};

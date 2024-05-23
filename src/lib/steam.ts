@@ -1,4 +1,4 @@
-import { PlayedGameData } from '../types/Game';
+import { GameDetails, PlayedGameData } from '../types/Game';
 import { PlayerSummary } from '../types/Player';
 
 export async function getPlayerSummary(steamid: string): Promise<PlayerSummary | null> {
@@ -33,6 +33,22 @@ export async function getOwnedGames(steamid: string): Promise<PlayedGameData[]> 
     console.log('❗️Error on fetching owned games');
     console.error(e);
     return [];
+  }
+}
+
+export async function getGameDetails(appid: string): Promise<GameDetails | null> {
+  try {
+    const data = await fetch(`/api/gamedetails?appid=${appid}`);
+    const json = await data.json();
+    if (json[appid]?.success) {
+      return json[appid].data as GameDetails;
+    }
+    console.log('❗️Error on decoding game details');
+    return null;
+  } catch (e) {
+    console.log('❗️Error on fetching game details');
+    console.error(e);
+    return null;
   }
 }
 
