@@ -18,7 +18,7 @@ const GameCard = ({ game }: Props) => {
         <div className="grow pl-[12px] whitespace-nowrap">
           <GameInfo
             title={game.name}
-            lastPlay={game.rtime_last_played}
+            supplement={game.details?.developers[0] ?? 'Loading...'}
             playTime={game.playtime_forever}
           />
         </div>
