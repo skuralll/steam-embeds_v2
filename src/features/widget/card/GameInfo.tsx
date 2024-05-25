@@ -5,11 +5,16 @@ type Props = {
 };
 
 const TITLE_LENGTH_LIMIT = 32;
+const SUPPLEMENT_LENGTH_LIMIT = 20;
 
 const GameInfo = ({ title, supplement, playTime }: Props) => {
   // limit title length
   if (title.length > TITLE_LENGTH_LIMIT) {
     title = title.slice(0, TITLE_LENGTH_LIMIT) + '...';
+  }
+  // limit supplement length
+  if (supplement.length > SUPPLEMENT_LENGTH_LIMIT) {
+    supplement = supplement.slice(0, SUPPLEMENT_LENGTH_LIMIT) + '...';
   }
 
   return (
