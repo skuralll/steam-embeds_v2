@@ -16,7 +16,7 @@ const meta = {
     title: {
       control: 'text',
     },
-    lastPlay: {
+    supplement: {
       control: 'text',
     },
     playTime: {
@@ -25,7 +25,7 @@ const meta = {
   },
   args: {
     title: 'STEINS;GATE',
-    lastPlay: 1610000000,
+    supplement: 'MAGES. Inc.',
     playTime: 30,
   },
 } satisfies Meta<typeof GameInfo>;
