@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import { PlayerSummary } from '../types/Player';
 import { useEffect, useState } from 'react';
-import { getOwnedGames, getPlayerSummary } from '../lib/steam';
+import { appendGameDetailsAll, getOwnedGames, getPlayerSummary } from '../lib/steam';
 import { PlayedGameData } from '../types/Game';
 import Widget from '../features/widget/Widget';
 
@@ -21,7 +21,14 @@ const WidgetPage = () => {
         });
         gamesPromise
           .then((games) => {
-            setGames(games.sort((a, b) => b.playtime_forever - a.playtime_forever).slice(0, num));
+            const sliced = games
+              .sort((a, b) => b.playtime_forever - a.playtime_forever)
+              .slice(0, num);
+            setGames(sliced);
+            return sliced;
+          })
+          .then((sliced) => {
+            appendGameDetailsAll(sliced).then(setGames);
           })
           .catch((error) => {
             console.error('Error fetching owned games:', error);

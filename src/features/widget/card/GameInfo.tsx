@@ -1,14 +1,12 @@
-import { getDateString } from '../../../lib/utils';
-
 type Props = {
   title: string;
-  lastPlay: number;
+  supplement: string;
   playTime: number;
 };
 
 const TITLE_LENGTH_LIMIT = 32;
 
-const GameInfo = ({ title, lastPlay, playTime }: Props) => {
+const GameInfo = ({ title, supplement, playTime }: Props) => {
   // limit title length
   if (title.length > TITLE_LENGTH_LIMIT) {
     title = title.slice(0, TITLE_LENGTH_LIMIT) + '...';
@@ -23,9 +21,7 @@ const GameInfo = ({ title, lastPlay, playTime }: Props) => {
         <br></br>
       </div>
       <div className="flex justify-between items-center">
-        <span className="text-[11px] text-[#536b89]">
-          {!lastPlay ? '' : getDateString(lastPlay)}
-        </span>
+        <span className="text-[11px] text-[#536b89]">{supplement}</span>
         <span>{Math.ceil((playTime / 60) * 10) / 10 + ' hours'}</span>
       </div>
     </div>

@@ -14,8 +14,6 @@ const GameCardList = ({ games }: Props) => {
   const handleScroll = () => {
     const element = scrollRef.current;
     if (element) {
-      const scrollPos = element.scrollHeight - element.scrollTop;
-      console.log(scrollPos);
       if (element.scrollHeight - element.scrollTop === element.clientHeight) {
         setIsBottom(true);
       } else {

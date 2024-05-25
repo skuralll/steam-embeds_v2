@@ -13,6 +13,7 @@ export type PlayedGameData = {
   playtime_deck_forever: number;
   playtime_disconnected: number;
   rtime_last_played: number;
+  details?: GameDetails;
 };
 
 export type GameDetails = {

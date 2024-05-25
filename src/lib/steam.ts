@@ -52,6 +52,16 @@ export async function getGameDetails(appid: string): Promise<GameDetails | null>
   }
 }
 
+export async function appendGameDetails(game: PlayedGameData): Promise<PlayedGameData> {
+  const details = await getGameDetails(game.appid.toString());
+  game.details = details ?? { developers: [], publishers: [] };
+  return game;
+}
+
+export async function appendGameDetailsAll(games: PlayedGameData[]): Promise<PlayedGameData[]> {
+  return Promise.all(games.map(appendGameDetails));
+}
+
 export function getGameHeaderURL(appid: string): string {
   return `https://cdn.akamai.steamstatic.com/steam/apps/${appid}/header.jpg`;
 }
